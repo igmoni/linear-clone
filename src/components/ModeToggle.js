@@ -22,7 +22,7 @@ const ModeToggle = () => {
   return (
     <button
       onClick={switchTheme}
-      className="relative flex size-9 items-center justify-center relative"
+      className="relative flex size-9 items-center justify-center"
       aria-label="Toggle theme"
     >
       <SunIcon
