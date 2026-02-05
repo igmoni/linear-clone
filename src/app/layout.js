@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
       <body className={`${manrope.variable} ${inter.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"   // ✅ FIXED TYPO
+          defaultTheme="system"   
           enableSystem
           disableTransitionOnChange
         >
