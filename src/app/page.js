@@ -1,5 +1,4 @@
 import { Hero } from "@/components/Hero";
-import { Logo } from "@/svgs/Logo";
 
 const page = () => {
   return (

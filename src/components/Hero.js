@@ -13,7 +13,6 @@ const Hero = () => {
         <Heading as="h1">
           Agents that do the work <br />
           Approvals that keep you safe.
-     
         </Heading>
 
         <SubHeading className={"py-8"}>
@@ -21,13 +20,13 @@ const Hero = () => {
           outcomes—without changing how your teams work.
         </SubHeading>
 
-        <div className="flex items-center w-fit gap-6">
+        <div className="flex w-fit items-center gap-6">
           <Button className={"shadow-brand"}>Start your free trial</Button>
           <Button asChild variant="ghost">
             <Link href="#">View role based demos</Link>
           </Button>
         </div>
-        
+
         <LandingImages />
       </Container>
     </div>
