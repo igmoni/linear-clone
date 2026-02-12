@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { IconLayoutSidebar, IconX } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
+import { useTheme } from "next-themes";
 
 const navLinks = [
   { title: "Features", href: "/features" },
@@ -27,9 +28,12 @@ export { Navbar };
 
 export const MobileNavbar = () => {
   const [open, setOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
   return (
     <div className="relative flex items-center justify-between px-4 py-2 md:hidden">
-      <Logo />
+      <div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        <Logo />
+      </div>
       <button onClick={() => setOpen(true)}>
         <IconLayoutSidebar className="size-4 text-black dark:text-white" />
       </button>
@@ -48,7 +52,7 @@ export const MobileNavbar = () => {
               background: "rgba(255,255,255,0.1)",
             }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 h-full w-full px-4 bg-black/40 backdrop-blur-md"
+            className="fixed inset-0 z-50 h-full w-full bg-black/40 px-4 backdrop-blur-md"
           >
             <div className="flex items-center justify-between py-2">
               <Logo />
@@ -69,10 +73,9 @@ export const MobileNavbar = () => {
                   animate={{
                     opacity: 1,
                     x: 0,
-
                   }}
                   transition={{
-                    duration: 0.3 ,
+                    duration: 0.3,
                     delay: index * 0.1,
                   }}
                   key={item.title}
@@ -86,6 +89,16 @@ export const MobileNavbar = () => {
                 </motion.div>
               ))}
             </div>
+
+            <div className="absolute right-5 bottom-10 flex items-center gap-4">
+              <Link
+                href={"/login"}
+                className="inline-block rounded-md px-4 py-2 text-sm font-medium text-neutral-600 dark:text-neutral-400"
+              >
+                Log in
+              </Link>
+              <Button>Sign up</Button>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
@@ -94,9 +107,12 @@ export const MobileNavbar = () => {
 };
 
 export const DesktopNavbar = () => {
+  const { theme, setTheme } = useTheme();
   return (
-    <Container className={"hidden items-center justify-between py-4 lg:flex"}>
-      <Logo />
+    <Container className={"hidden items-center justify-between py-4 md:flex"}>
+     <div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+        <Logo />
+      </div>
       <div className="flex items-center gap-4">
         {navLinks.map((item) => (
           <Link

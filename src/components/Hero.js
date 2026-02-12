@@ -8,7 +8,7 @@ import { LandingImages } from "./LandingImages";
 
 const Hero = () => {
   return (
-    <div className="pt-10 md:pt-20 lg:pt-32">
+    <section className="pt-10 md:pt-20 lg:pt-32 relative overflow-hidden">
       <Container>
         <Heading as="h1">
           Agents that do the work <br />
@@ -26,10 +26,9 @@ const Hero = () => {
             <Link href="#">View role based demos</Link>
           </Button>
         </div>
-
         <LandingImages />
       </Container>
-    </div>
+    </section>
   );
 };
 
