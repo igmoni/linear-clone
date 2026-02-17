@@ -23,7 +23,12 @@ const CardTitle = ({ className, children }) => {
 
 const CardContent = ({ className, children }) => {
   return (
-    <div className={cn("px-4 pb-6 md:px-8 md:pb-12 flex items-center justify-between", className)}>
+    <div
+      className={cn(
+        "flex items-center justify-between px-4 pb-6 md:px-8 md:pb-12",
+        className,
+      )}
+    >
       {children}
     </div>
   );
@@ -31,16 +36,26 @@ const CardContent = ({ className, children }) => {
 
 const CardButton = ({ className, children, ...rest }) => {
   return (
-    <button {...rest} className={cn("flex size-5 shrink-0 items-center justify-center rounded-full border border-neutral-200 transition duration-200 active:scale-[0.95] md:size-10 dark:border-neutral-800", className)}>
+    <button
+      {...rest}
+      className={cn(
+        "flex size-5 shrink-0 items-center justify-center rounded-full border border-neutral-200 transition duration-200 active:scale-[0.95] md:size-10 dark:border-neutral-800",
+        className,
+      )}
+    >
       {children}
     </button>
   );
 };
 
-const CardSkeleton = ({className, children}) => {
-    return (
-        <div className={cn("min-h-40 md:min-h-80", className)}>{children}</div>
-    )
-}
+const CardSkeleton = ({ className, children }) => {
+  return (
+    <div
+      className={cn("relative min-h-40 overflow-hidden md:min-h-80 perspective-distant mask-radial-from-50%", className)}
+    >
+      {children}
+    </div>
+  );
+};
 
 export { Card, CardTitle, CardContent, CardButton, CardSkeleton };

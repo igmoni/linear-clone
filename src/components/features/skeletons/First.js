@@ -2,29 +2,65 @@ import { cn } from "@/lib/utils";
 import {
   IconCircleDashedCheck,
   IconClock,
+  IconExclamationCircle,
+  IconPrison,
   IconRipple,
 } from "@tabler/icons-react";
 
 const First = () => {
   return (
-    <div>
-      <SkeletonCard title={"Campaign Planenr"}  desc={" Creates clear, ready-to-use campaign briefs using product info, audience data, and past results."} icon={<IconCircleDashedCheck className="size-4" />} badge={<Badge text={"120S"} variant="danger" />} />
+    <div
+    style={{
+      transform: "rotateZ(15deg) rotateX(30deg) rotateY(-20deg) scale(1.3) "
+    }}
+    className="perspective-distant h-full w-full transform-3d absolute -translate-y-10 translate-x-5 mask-radial-from-50% mask-r-from-50%">
+      <SkeletonCard
+        className={"absolute left-12 bottom-0 z-30 max-w-[90%]"}
+        title={"Campaign Planner"}
+        desc={
+          "Creates clear, ready-to-use campaign briefs using product info, audience data, and past results."
+        }
+        icon={<IconCircleDashedCheck className="size-4" />}
+        badge={<Badge text={"90S"} variant="warning" />}
+      />
+      <SkeletonCard
+        className={"absolute left-8 bottom-8 z-20"}
+        title={"Issue Tracker"}
+        desc={
+          "Creates clear, ready-to-use campaign briefs using product info, audience data, and past results."
+        }
+        icon={<IconExclamationCircle className="size-4" />}
+        badge={<Badge text={"45S"} variant="success" />}
+      />
+      <SkeletonCard
+        className={"absolute bottom-20 left-4  z-10 max-w-[80%]"}
+        title={"Risk Analysis"}
+        desc={
+          "Creates clear, ready-to-use campaign briefs using product info, audience data, and past results."
+        }
+        icon={<IconPrison className="size-4" />}
+        badge={<Badge text={"120S"} variant="danger" />}
+      />
     </div>
   );
 };
 
 export { First };
 
-
-const SkeletonCard = ({ icon, title, desc, badge }) => {
+const SkeletonCard = ({ icon, title, desc, badge, className }) => {
   return (
-    <div className="boder mx-auto max-w-[90%] rounded-lg border-neutral-200 bg-neutral-100 p-3 dark:border-neutral-700">
+    <div
+      className={cn(
+        "mx-auto my-auto shadow-2xl h-fit w-full max-w-[85%] rounded-2xl border border-neutral-200 bg-neutral-100 dark:bg-neutral-900 p-3 dark:border-neutral-700",
+        className,
+      )}
+    >
       <div className="flex items-center gap-3">
         {icon}
-        <p>{title}</p>
+        <p className="text-sm font-normal text-black dark:text-white">{title}</p>
         {badge}
       </div>
-      <p className="mt-2 text-sm font-medium text-neutral-500 dark:text-neutral-400">
+      <p className="mt-2 text-sm font-normal text-neutral-400/80 dark:text-neutral-400">
         {desc}
       </p>
       <div className="flex flex-wrap items-center gap-2">
