@@ -5,6 +5,7 @@ import { SubHeading } from "../SubHeading";
 import { Card, CardButton, CardContent, CardSkeleton, CardTitle } from "./Card";
 import { CheckCircleIcon, Plus } from "lucide-react";
 import { First } from "./skeletons/First";
+import { Third } from "./skeletons/Third";
 
 const Features = () => {
   return (
@@ -44,7 +45,9 @@ const Features = () => {
           </CardContent>
         </Card>
         <Card className={"rounded-tr-3xl rounded-br-3xl"}>
-          <CardSkeleton></CardSkeleton>
+          <CardSkeleton>
+            <Third />
+          </CardSkeleton>
 
           <CardContent>
             <CardTitle>Approvals, Guardrails, and Full Auditability</CardTitle>
