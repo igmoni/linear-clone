@@ -6,6 +6,7 @@ import { Card, CardButton, CardContent, CardSkeleton, CardTitle } from "./Card";
 import { CheckCircleIcon, Plus } from "lucide-react";
 import { First } from "./skeletons/First";
 import { Third } from "./skeletons/Third";
+import { Second } from "./skeletons/Second";
 
 const Features = () => {
   return (
@@ -35,7 +36,9 @@ const Features = () => {
           </CardContent>
         </Card>
         <Card>
-          <CardSkeleton></CardSkeleton>
+          <CardSkeleton>
+            <Second />
+          </CardSkeleton>
 
           <CardContent>
             <CardTitle>Automate Handoffs, Reduce Ops Friction</CardTitle>
