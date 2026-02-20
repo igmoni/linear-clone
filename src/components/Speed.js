@@ -1,12 +1,12 @@
 import React from "react";
-import { Container } from "../Container";
-import { Heading } from "../Heading";
-import { SubHeading } from "../SubHeading";
-import { LandingImages } from "../LandingImages";
+import { Container } from "./Container";
+import { Heading } from "./Heading";
+import { SubHeading } from "./SubHeading";
+import { LandingImages } from "./LandingImages";
 
 const Speed = () => {
   return (
-    <Container className={"py-10 md:py-20 lg:py-10"}>
+    <Container className={"py-10 md:py-20 lg:py-0 overflow-hidden"}>
       <Heading>
        Built for Speed <br />
         Design for Scale.
@@ -18,7 +18,7 @@ const Speed = () => {
       </SubHeading>
 
       
-      <LandingImages firstImg="/3.webp" secondImg="/4.webp" showGradient={false}  />
+      <LandingImages firstImg="/3.webp" secondImg="/4.webp"   />
     </Container>
   );
 };

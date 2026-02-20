@@ -1,7 +1,8 @@
 import { Features } from "@/components/features/Index";
+import { FeaturesSection } from "@/components/features-secondary/Index";
 import { Hero } from "@/components/Hero";
 import { LogoCloud } from "@/components/LogoCloud";
-import { Speed } from "@/components/ui/Speed";
+import { Speed } from "@/components/Speed";
 
 const page = () => {
   return (
@@ -10,6 +11,8 @@ const page = () => {
       <LogoCloud />
       <Features />
       <Speed />
+      <FeaturesSection />
+      <div className="min-h-[20vh]"></div>
     </div>
   );
 };
