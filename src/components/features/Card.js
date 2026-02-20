@@ -4,7 +4,7 @@ import React from "react";
 const Card = ({ className, children }) => {
   return (
     <div
-      className={cn("rounded-lg bg-neutral-50 dark:bg-neutral-800", className)}
+      className={cn("rounded-lg max-w-xl mx-auto bg-neutral-50 dark:bg-neutral-800", className)}
     >
       {children}
     </div>
@@ -51,7 +51,7 @@ const CardButton = ({ className, children, ...rest }) => {
 const CardSkeleton = ({ className, children }) => {
   return (
     <div
-      className={cn("relative min-h-40 overflow-hidden md:min-h-80 perspective-distant mask-radial-from-50%", className)}
+      className={cn("relative h-80 sm:h-60 overflow-hidden md:h-80 perspective-distant mask-radial-from-50%", className)}
     >
       {children}
     </div>

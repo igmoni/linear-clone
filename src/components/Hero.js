@@ -8,7 +8,7 @@ import { LandingImages } from "./LandingImages";
 
 const Hero = () => {
   return (
-    <section className="pt-10 md:pt-20 lg:pt-32 relative overflow-hidden">
+    <section className="relative overflow-hidden pt-10 md:pt-20 lg:pt-32">
       <Container>
         <Heading as="h1">
           Agents that do the work <br />
