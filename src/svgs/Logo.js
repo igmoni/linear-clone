@@ -14,7 +14,7 @@ const Logo = ({ className }) => {
 
 export { Logo };
 
-const LogoIcon = (props) => {
+export const LogoIcon = (props) => {
   return (
     <svg
       width="20"

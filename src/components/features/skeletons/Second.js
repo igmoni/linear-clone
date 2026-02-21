@@ -67,13 +67,13 @@ const Second = () => {
 
 export { Second };
 
-const GradientHr = () => {
+export const GradientHr = () => {
   return(
     <div className="h-px w-full bg-linear-to-r from-transparent via-neutral-200 to-transparent" />
   );
 };
 
-const Row = ({ icon, title, time, variant = "success" }) => {
+export const Row = ({ icon, title, time, variant = "success" }) => {
   return (
     <div className="flex items-center justify-between px-4 py-2">
       <div className="flex items-center gap-2">
@@ -99,7 +99,7 @@ const Row = ({ icon, title, time, variant = "success" }) => {
   );
 };
 
-const Pattern = () => {
+export const Pattern = () => {
   return (
     <div className="absolute inset-0 bg-[repeating-linear-gradient(315deg,var(--pattern-fg)_0,var(--pattern-fg)_1px,transparent_0,transparent_50%)] bg-size-[10px_10px] bg-fixed" />
   );
