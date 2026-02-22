@@ -22,30 +22,7 @@ const SkeletonOne = () => {
           { icon: <SheetsIcon className="size-3" />, text: "Sheets" },
         ]}
       />
-      <Card
-        topIcon={<CogIcon />}
-        title={"Define Processing Logic"}
-        desc={
-          "Create workflows, decision points, and conditional actions for each task."
-        }
-        tags={[
-          { icon: <SalesForceIcon className="size-3" />, text: "Salesforce" },
-          { icon: <HubSpotIcon className="size-3" />, text: "Hubspot" },
-          { icon: <SheetsIcon className="size-3" />, text: "Sheets" },
-        ]}
-      />
-      <Card
-        topIcon={<FileIcon />}
-        title={"Connect Data"}
-        desc={
-          "Link CRMs, helpdesks, and APIs to give agents secure, role-based `access."
-        }
-        tags={[
-          { icon: <SalesForceIcon className="size-3" />, text: "Salesforce" },
-          { icon: <HubSpotIcon className="size-3" />, text: "Hubspot" },
-          { icon: <SheetsIcon className="size-3" />, text: "Sheets" },
-        ]}
-      />
+    
     </div>
   );
 };

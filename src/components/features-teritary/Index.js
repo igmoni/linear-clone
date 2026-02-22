@@ -10,7 +10,7 @@ import {
   WorkFlowIcon,
 } from "@/icons/FileIcon";
 
-const FeaturesSection = () => {
+const FeaturesTeritary = () => {
   return (
     <section className="relative overflow-hidden pt-10 md:pt-20 lg:pt-32">
       <Container>
@@ -19,12 +19,11 @@ const FeaturesSection = () => {
           <div>
             <CardContent>
               <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-                Agent Studio
+              Audit Trail
               </h2>
 
               <CardDescription>
-                Design, launch and customize AI agents for marketing, sales,
-                support and ops, built around your workflows.
+              Tracks every agent action with full input-output visibility and timestamps.
               </CardDescription>
             </CardContent>
 
@@ -37,12 +36,11 @@ const FeaturesSection = () => {
           <div>
             <CardContent>
               <h2 className="text-lg font-bold text-neutral-800 dark:text-neutral-200">
-                Multi-Agent Orchestration
+              Role-Based Access
               </h2>
 
               <CardDescription>
-                Coordinate multiple agents across workflows using memory,
-                interrupts, and conditional logic.
+              Controls who can launch, review, or manage agents based on roles.
               </CardDescription>
             </CardContent>
 
@@ -54,49 +52,12 @@ const FeaturesSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 mt-10 md:m-20">
-          <div>
-            <div className="flex items-center gap-2">
-              <WorkFlowIcon />
-              <h3 className="text-lg font-bold text-neutral-600">
-                Workflow Automation
-              </h3>
-            </div>
-            <p className="text-base text-neutral-500">
-              Automate campaigns, tickets and CRM updates without manual
-              handoffs.
-            </p>
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <IntergrationIcon />
-              <h3 className="text-lg font-bold text-neutral-600">
-                Integration Fabric
-              </h3>
-            </div>
-            <p className="text-base text-neutral-500">
-              Connect CRMs, service desks, data warehouses and cloud apps
-              seamlessly.
-            </p>
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <HumanLoopIcon />
-              <h3 className="text-lg font-bold text-neutral-600">
-                Human-in-the-Loop
-              </h3>
-            </div>
-            <p className="text-base text-neutral-500">
-              Add reviews, approvals and escalations without slowing work.
-            </p>
-          </div>
-        </div>
       </Container>
     </section>
   );
 };
 
-export { FeaturesSection };
+export { FeaturesTeritary };
 
 /* -------------------- Skeletons -------------------- */
 

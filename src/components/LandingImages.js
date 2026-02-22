@@ -4,15 +4,11 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-
-
-
-
 const LandingImages = ({ firstImg = "/4.webp", secondImg = "/3.webp", showGradient = true }) => {
   return (
     <div className="relative">
       {showGradient && (
-        <div className="absolute inset-x-0 h-full w-full mask-t-from-10% bg-white z-50" />
+        <div className="absolute inset-x-0 h-full w-full dark:bg-black mask-t-from-10% bg-white z-50" />
       )}
       <div
       className={cn(
@@ -21,7 +17,7 @@ const LandingImages = ({ firstImg = "/4.webp", secondImg = "/3.webp", showGradie
     >
      <motion.div
           initial={{ opacity: 0, y: -100 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="perspective-[4000px]"
         >
