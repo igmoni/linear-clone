@@ -4,18 +4,22 @@ import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
-const LandingImages = ({ firstImg = "/4.webp", secondImg = "/3.webp", showGradient = true }) => {
+const LandingImages = ({
+  firstImg = "/4.webp",
+  secondImg = "/3.webp",
+  showGradient = true,
+}) => {
   return (
     <div className="relative">
       {showGradient && (
-        <div className="absolute inset-x-0 h-full w-full dark:bg-black mask-t-from-10% bg-white z-50" />
+        <div className="absolute inset-x-0 z-50 h-full w-full bg-white mask-t-from-10% dark:bg-black" />
       )}
       <div
-      className={cn(
-        "relative min-h-72 w-full overflow-hidden pt-20 perspective-distant sm:min-h-80 md:min-h-100 md:overflow-visible lg:min-h-140 translate-x-28",
-      )}
-    >
-     <motion.div
+        className={cn(
+          "relative min-h-72 w-full translate-x-28 overflow-hidden pt-20 perspective-distant sm:min-h-80 md:min-h-100 md:overflow-visible lg:min-h-140",
+        )}
+      >
+        <motion.div
           initial={{ opacity: 0, y: -100 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
@@ -41,7 +45,7 @@ const LandingImages = ({ firstImg = "/4.webp", secondImg = "/3.webp", showGradie
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           className="translate-x-20 -translate-y-10 perspective-[4000px] md:translate-y-20 lg:-translate-y-40"
-          >
+        >
           <Image
             src={secondImg}
             alt="Demo 1 Image"
@@ -53,11 +57,10 @@ const LandingImages = ({ firstImg = "/4.webp", secondImg = "/3.webp", showGradie
             style={{
               transform: "rotateY(20deg) rotateX(40deg) rotate(-20deg)",
             }}
-            />
+          />
         </motion.div>
-
+      </div>
     </div>
-    </div>
-  )
-}
-            export { LandingImages };
+  );
+};
+export { LandingImages };
