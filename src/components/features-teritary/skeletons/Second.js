@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { LogoIcon } from "@/svgs/Logo";
 import Image from "next/image";
@@ -7,25 +9,25 @@ const SkeletonTwo = () => {
   return (
     <div className="flex h-full w-full flex-col items-center justify-center gap-2 mask-radial-from-30% px-8">
       <div className="grid grid-cols-4 justify-center gap-1">
-        <Item />
+        <Item pattern />
         <Item src="/avatar1.avif" />
         <Item src="/avatar4.avif" />
-        <Item />
+        <Item pattern />
       </div>
       <div className="grid grid-cols-5 gap-1">
-        <Item />
+        <Item pattern />
         <Item src="/avatar3.avif" />
-        <Item className={""} pattern>
+        <Item>
           <LogoIcon className="size-10" />
         </Item>
         <Item src="/avatar6.avif" />
-        <Item />
+        <Item pattern />
       </div>
       <div className="grid grid-cols-4 justify-center gap-1">
-        <Item />
+        <Item pattern />
         <Item src="/avatar5.avif" />
         <Item src="/avatar2.avif" />
-        <Item />
+        <Item pattern />
       </div>
     </div>
   );
@@ -42,18 +44,27 @@ const Item = ({ children, className, src, pattern }) => {
       )}
     >
       {src && (
-        <div className="relative flex h-full w-full items-center justify-center rounded-[22px] bg-linear-to-br from-blue-500 via-transparent to-blue-500 p-px">
-          <Image
-            height={120}
-            width={120}
-            src={src}
-            alt="Image"
-            className="relative z-20 aspect-square rounded-[21px] object-cover object-top"
-          />
-        </div>
+        <motion.div
+          initial={{ opacity: 0, filter: "blur(10px)" }}
+          whileInView={{ opacity: 1, filter: "blur(0px)" }}
+          transition={{
+            duration: Math.random() * 0.8 + 0.2,
+            delay: Math.random() * 0.8 + 0.2,
+          }}
+        >
+          <div className="relative flex h-full w-full items-center justify-center rounded-[22px] bg-linear-to-br from-blue-500 via-transparent to-blue-500 p-px">
+            <Image
+              height={120}
+              width={120}
+              src={src}
+              alt="Image"
+              className="relative z-20 aspect-square rounded-[21px] object-cover object-top"
+            />
+          </div>
+        </motion.div>
       )}
       {children}
-      {!pattern && <Pattern />}
+      {pattern && <Pattern />}
     </div>
   );
 };
