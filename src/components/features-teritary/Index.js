@@ -46,7 +46,7 @@ const FeaturesTeritary = () => {
 
             <div className="flex-1" />
 
-            <CardSkeleton className={"mask-t-from-50% mask-radial-from-50%"}>
+            <CardSkeleton className={""}>
               <SkeletonTwo />
             </CardSkeleton>
           </div>

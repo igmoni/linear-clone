@@ -111,34 +111,26 @@ export { SkeletonOne };
 
 const Card = ({ items }) => {
   return (
-    <div className="flex flex-1 flex-col items-start gap-4 rounded-tl-[12px] border border-transparent bg-white ring shadow-black/10 ring-black/10">
+    <div className="flex flex-1 flex-col items-start gap-4 rounded-tl-[12px] border border-transparent bg-white dark:bg-neutral-800 ring shadow-black/10 ring-black/10">
       <div className="flex w-full items-center gap-2 border-b px-4 py-2">
         <RecentActivity />
-        <p className="text-sm font-bold text-neutral-800">Recent Activity</p>
+        <p className="text-sm font-bold text-neutral-800 dark:text-white">Recent Activity</p>
       </div>
       {items.map((item, index) => (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-        >
+        // <motion.div
+        //   initial={{ opacity: 0, y: 10 }}
+        //   whileInView={{ opacity: 1, y: 0 }}
+        //   transition={{ duration: 0.5, delay: index * 0.1 }}
+        // >
+        // </motion.div>
           <CardItem key={index} {...item} />
-        </motion.div>
       ))}
     </div>
   );
 };
 
 const CardItem = ({ icon, iconClassName, title, badge, description }) => {
-  const randomColors = [
-    "--color-blue-500",
-    "--color-red-500",
-    "--color-green-500",
-  ];
-
-  const randomColor =
-    randomColors[Math.floor(Math.random() * randomColors.length)];
-
+ 
   return (
     <div className="relative flex w-full items-center justify-between overflow-hidden pl-4">
       <div className="flex items-center gap-2">
@@ -150,7 +142,7 @@ const CardItem = ({ icon, iconClassName, title, badge, description }) => {
         >
           {icon}
         </div>
-        <p className="text-sm text-neutral-600">{title}</p>
+        <p className="text-sm text-neutral-500">{title}</p>
         {badge}
       </div>
       <p className="max-w-[16rem] flex-nowrap truncate text-sm whitespace-nowrap text-neutral-500">

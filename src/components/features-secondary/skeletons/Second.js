@@ -43,10 +43,10 @@ const SkeletonTwo = () => {
           />
         </RevolvingCard>
       </Circle>
-      <Circle className="relative z-9 size-60 border-neutral-100 bg-neutral-100/80 shadow"></Circle>
-      <Circle className="z-8 size-80 border-neutral-100 bg-neutral-100/60 shadow"></Circle>
-      <Circle className="z-7 size-100 border-neutral-100 bg-neutral-100/40 shadow"></Circle>
-      <Circle className="z-6 size-120 border-neutral-100 bg-neutral-100/20 shadow"></Circle>
+      <Circle className="relative z-9 size-60 border-neutral-100 bg-neutral-100/80 dark:bg-neutral-800/80  shadow"></Circle>
+      <Circle className="z-8 size-80 border-neutral-100 bg-neutral-100/60  dark:bg-neutral-800/60 shadow"></Circle>
+      <Circle className="z-7 size-100 border-neutral-100 bg-neutral-100/40  dark:bg-neutral-800/40 shadow"></Circle>
+      <Circle className="z-6 size-120 border-neutral-100 bg-neutral-100/20  dark:bg-neutral-800/20 shadow"></Circle>
     </div>
   );
 };
@@ -57,7 +57,7 @@ const RevolvingCard = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "animate-orbit absolute inset-0 m-auto flex size-10 items-center justify-center rounded-sm border border-transparent bg-white ring-1 shadow-black/10 ring-black/10 [--orbit-duration:10s] [--translate-position:120px]",
+        "animate-orbit absolute inset-0 m-auto flex size-10 items-center justify-center rounded-sm border border-transparent bg-white dark:bg-neutral-800 ring-1 shadow-black/10 ring-black/10 [--orbit-duration:10s] [--translate-position:120px]",
         className,
       )}
     >
@@ -91,7 +91,7 @@ const Circle = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "absolute inset-0 z-10 m-auto size-40 rounded-full border border-transparent bg-white",
+        "absolute inset-0 z-10 m-auto size-40 rounded-full border border-transparent bg-white dark:bg-neutral-800",
         className,
       )}
     >

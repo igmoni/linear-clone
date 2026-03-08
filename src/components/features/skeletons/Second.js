@@ -26,9 +26,9 @@ const Second = () => {
         </p>
       </div>
 
-      <div className="relative mt-4 h-60 flex-1 rounded-2xl border border-neutral-200 bg-neutral-200">
+      <div className="relative mt-4 h-60 flex-1 rounded-2xl border border-neutral-200 dark:border-neutral-700 bg-neutral-200 dark:bg-neutral-800">
         <Pattern />
-        <div className="absolute inset-0 h-full w-full translate-x-8 -translate-y-2 scale-105 rounded-2xl bg-white transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:scale-100">
+        <div className="absolute inset-0 h-full w-full translate-x-8 -translate-y-2 scale-105 rounded-2xl bg-white dark:bg-neutral-800 transition-all duration-300 group-hover:translate-x-0 group-hover:translate-y-0 group-hover:scale-100">
           <Row
             icon={<IconCheck className="size-4 fill-green-500 stroke-white" />}
             title={"Fetching Data"}

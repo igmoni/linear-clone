@@ -11,7 +11,7 @@ import { motion } from "motion/react";
 
 const SkeletonOne = () => {
   return (
-    <div className="absolute inset-x-0 mx-auto flex h-full w-full max-w-sm flex-1 flex-col gap-2 rounded-t-3xl border border-neutral-200 bg-neutral-100 p-2 dark:bg-neutral-800">
+    <div className="absolute inset-x-0 mx-auto flex h-full w-full max-w-sm flex-1 flex-col gap-2 rounded-t-3xl border border-neutral-200 bg-neutral-100 p-2 dark:bg-neutral-900 dark:border-neutral-700">
       <Card
         topIcon={<PersonIcon />}
         title={"Human-in-the-Loop"}
@@ -63,7 +63,7 @@ const Card = ({ topIcon, title, desc, tags }) => {
     randomColors[Math.floor(Math.random() * randomColors.length)];
 
   return (
-    <div className="flex items-start gap-4 rounded-[12px] border border-transparent bg-white p-4 ring shadow-black/10 ring-black/10">
+    <div className="flex items-start gap-4 rounded-[12px] border border-transparent bg-white dark:bg-neutral-800 p-4 ring shadow-black/10 ring-black/10">
       <div
         className="mt-1 flex size-6 shrink-0 items-center justify-center rounded-full"
         style={{
@@ -73,7 +73,7 @@ const Card = ({ topIcon, title, desc, tags }) => {
         {topIcon}
       </div>
       <div>
-        <p className="text-lg font-bold text-neutral-800">{title}</p>
+        <p className="text-lg font-bold dark:text-white text-neutral-800">{title}</p>
         <p className="text-base text-neutral-600">{desc}</p>
         <div className="mt-2 flex flex-row flex-wrap gap-2">
           {tags.map((tag) => (
