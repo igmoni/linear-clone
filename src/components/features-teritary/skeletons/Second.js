@@ -1,12 +1,30 @@
-
 import { cn } from "@/lib/utils";
+import { LogoIcon } from "@/svgs/Logo";
 import Image from "next/image";
 import React from "react";
 
 const SkeletonTwo = () => {
   return (
-    <div className="h-full w-full rounded-t-3xl px-8">
+    <div className="flex h-full w-full flex-col items-center justify-center gap-2 mask-radial-from-30% px-8">
+      <div className="grid grid-cols-4 justify-center gap-1">
+        <Item />
+        <Item src="/avatar1.avif" />
+        <Item src="/avatar4.avif" />
+        <Item />
+      </div>
       <div className="grid grid-cols-5 gap-1">
+        <Item />
+        <Item src="/avatar3.avif" />
+        <Item className={""} pattern>
+          <LogoIcon className="size-10" />
+        </Item>
+        <Item src="/avatar6.avif" />
+        <Item />
+      </div>
+      <div className="grid grid-cols-4 justify-center gap-1">
+        <Item />
+        <Item src="/avatar5.avif" />
+        <Item src="/avatar2.avif" />
         <Item />
       </div>
     </div>
@@ -15,20 +33,27 @@ const SkeletonTwo = () => {
 
 export { SkeletonTwo };
 
-const Item = ({ children, className, src="/avatar1.avif" }) => {
+const Item = ({ children, className, src, pattern }) => {
   return (
     <div
       className={cn(
-        "size-20 rounded-xl border border-dashed relative p-2 border-neutral-200 [--pattern-fg:var(--color-neutral-950)]/5 dark:[--pattern-fg:var(--color-neutral)]/10 overflow-hidden",
+        "relative flex size-25 items-center justify-center overflow-hidden rounded-3xl border border-dashed border-neutral-200 p-px [--pattern-fg:var(--color-neutral-950)]/5 dark:border-neutral-700 dark:[--pattern-fg:var(--color-neutral-400)]/10",
         className,
       )}
     >
-
-      <div className="absolute inset-0 bg-black rounded-xl">
-      {/* <Image fill src={src} alt="Image" className="object-cover object-top"  /> */}
-
-      </div>
-      <Pattern />
+      {src && (
+        <div className="relative flex h-full w-full items-center justify-center rounded-[22px] bg-linear-to-br from-blue-500 via-transparent to-blue-500 p-px">
+          <Image
+            height={120}
+            width={120}
+            src={src}
+            alt="Image"
+            className="relative z-20 aspect-square rounded-[21px] object-cover object-top"
+          />
+        </div>
+      )}
+      {children}
+      {!pattern && <Pattern />}
     </div>
   );
 };
